@@ -75,6 +75,7 @@ const pillars = [
 const projects = [
   {
     n: '01',
+    slug: 'project-01',
     tag: 'Digital Presence',
     client: 'Dr. Virender Ahlawat',
     desc: "A trust-first individual-focused website that becomes the doctor's digital persona.",
@@ -82,6 +83,7 @@ const projects = [
   },
   {
     n: '02',
+    slug: 'project-02',
     tag: 'CRM + Listing Boost',
     client: 'Fortune Real Estate Group',
     desc: 'A boosted listing workflow with retouching, staging, and content writing in one pipeline.',
@@ -89,6 +91,7 @@ const projects = [
   },
   {
     n: '03',
+    slug: 'project-03',
     tag: 'Content + Social Media',
     client: 'South Asian Connect',
     desc: 'A bilingual content engine: reels, thumbnails, captions, and ongoing social management.',
@@ -123,14 +126,9 @@ const team = [
 ]
 
 const clients = [
-  { name: 'Dr. Virender Ahlawat', kind: 'Healthcare' },
-  { name: 'Fortune Real Estate', kind: 'Real Estate' },
-  { name: 'South Asian Connect', kind: 'Media' },
-  { name: 'Langley Wellness', kind: 'Health' },
-  { name: 'Northstar Realty', kind: 'Real Estate' },
-  { name: 'Cascade Café', kind: 'Hospitality' },
-  { name: 'Maple Legal Group', kind: 'Legal' },
-  { name: 'Aurora Studio', kind: 'Studio' },
+  { name: 'Dr. Virender Ahlawat', kind: 'Healthcare', logo: 'client-ahlawat.png' },
+  { name: 'Fortune Real Estate Group', kind: 'Real Estate', logo: 'client-fortune.png' },
+  { name: 'South Asian Connect', kind: 'Media', logo: 'client-southasian.png' },
 ]
 
 const marqueeItems = [
@@ -291,19 +289,27 @@ export default function Home() {
           </div>
 
           <StaggerGroup className="mt-12 grid gap-6 md:grid-cols-3">
-            {projects.map(({ n, tag, client, desc, swatch }) => (
-              <StaggerItem
-                key={n}
-                className="overflow-hidden rounded-2xl border border-bone/10 bg-ink-900/60 transition hover:-translate-y-1"
-              >
-                <div className={`relative aspect-[4/5] bg-gradient-to-br ${swatch} flex items-end p-6`}>
-                  <span className="font-display text-8xl font-bold text-bone/20">{n}</span>
-                </div>
-                <div className="p-6">
-                  <span className="text-xs uppercase tracking-widest2 text-cyan-electric">{tag}</span>
-                  <h3 className="display-h3 mt-2 text-bone">{client}</h3>
-                  <p className="mt-3 text-sm text-bone/60 leading-relaxed">{desc}</p>
-                </div>
+            {projects.map(({ n, slug, tag, client, desc, swatch }) => (
+              <StaggerItem key={n}>
+                <Link
+                  to={`/${slug}`}
+                  className="block overflow-hidden rounded-2xl border border-bone/10 bg-ink-900/60 transition hover:-translate-y-1"
+                >
+                  <div className={`relative aspect-[4/5] bg-gradient-to-br ${swatch} flex items-end p-6`}>
+                    <img
+                      src={`/images/projects/${slug}-a.jpg`}
+                      alt={client}
+                      className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+                    />
+                    <span className="relative font-display text-8xl font-bold text-bone/20">{n}</span>
+                  </div>
+                  <div className="p-6">
+                    <span className="text-xs uppercase tracking-widest2 text-cyan-electric">{tag}</span>
+                    <h3 className="display-h3 mt-2 text-bone">{client}</h3>
+                    <p className="mt-3 text-sm text-bone/60 leading-relaxed">{desc}</p>
+                    <span className="link-underline mt-4 text-sm inline-block">View Case Study →</span>
+                  </div>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerGroup>
@@ -401,14 +407,17 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.2} className="mt-12 overflow-hidden rounded-2xl border border-bone/10 bg-bone/10">
-            <div className="grid grid-cols-2 gap-px sm:grid-cols-3 lg:grid-cols-4">
-              {clients.map(({ name, kind }) => (
+            <div className="grid grid-cols-3 gap-px">
+              {clients.map(({ name, kind, logo }) => (
                 <div
                   key={name}
-                  className="flex h-32 flex-col items-center justify-center bg-ink-900/80 p-4 text-center transition hover:bg-ink-800"
+                  className="flex h-40 flex-col items-center justify-center bg-ink-900/80 p-6 text-center transition hover:bg-ink-800"
                 >
-                  <span className="font-display text-lg text-bone">{name}</span>
-                  <span className="mt-1 text-xs uppercase tracking-widest2 text-bone/50">{kind}</span>
+                  <img
+                    src={`/images/clients/${logo}`}
+                    alt={name}
+                    className="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition-[filter] duration-500"
+                  />
                 </div>
               ))}
             </div>

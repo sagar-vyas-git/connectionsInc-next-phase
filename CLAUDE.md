@@ -27,6 +27,9 @@ npm run preview      # preview the production build
 | `/realty/tours` | 360° Tours |
 | `/realty/drone` | Drone Capture |
 | `/realty/content` | Content Writing |
+| `/project-01` | Case Study — Dr. Virender Ahlawat |
+| `/project-02` | Case Study — Fortune Real Estate Group |
+| `/project-03` | Case Study — South Asian Connect |
 
 ## Architecture
 

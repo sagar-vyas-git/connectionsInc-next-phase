@@ -12,6 +12,9 @@ import Blueprints from './pages/Blueprints'
 import Tours from './pages/Tours'
 import Drone from './pages/Drone'
 import ContentWriting from './pages/ContentWriting'
+import Project01 from './pages/Project01'
+import Project02 from './pages/Project02'
+import Project03 from './pages/Project03'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -41,6 +44,9 @@ export default function App() {
             <Route path="/realty/tours" element={<Tours />} />
             <Route path="/realty/drone" element={<Drone />} />
             <Route path="/realty/content" element={<ContentWriting />} />
+            <Route path="/project-01" element={<Project01 />} />
+            <Route path="/project-02" element={<Project02 />} />
+            <Route path="/project-03" element={<Project03 />} />
           </Route>
         </Routes>
       </AnimatePresence>
