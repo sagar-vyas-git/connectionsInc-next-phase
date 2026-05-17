@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import MapleLogo from './MapleLogo'
+import { imgUrl } from '../utils/imgUrl'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
@@ -32,13 +32,12 @@ export default function Navbar() {
       }`}
     >
       <div className="container-edge flex h-full items-center justify-between">
-        <Link to="/" className="group flex items-center gap-2">
-          <MapleLogo
-            className="h-8 w-8 transition-transform duration-300 group-hover:rotate-12"
+        <Link to="/" className="group flex items-center">
+          <img
+            src={imgUrl('images/logo/connection-maple-white-no-bg-crop.png')}
+            alt="Connections X Media Inc."
+            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-display text-xl font-bold tracking-widest2">
-            CONNECTIONS<span className="text-cyan-electric">×</span>
-          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">

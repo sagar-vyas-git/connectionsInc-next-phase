@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { FadeIn, StaggerGroup, StaggerItem, PageWrap } from '../components/Reveal'
+import { imgUrl } from '../utils/imgUrl'
 
 const websiteItems = [
   'Website Development',
@@ -71,6 +72,15 @@ export default function Services() {
                   Unlike generic, cookie-cutter websites that blend into the digital crowd, we take pride in creating a unique, memorable identity for your website—one that stands out and inspires trust.
                 </p>
               </FadeIn>
+              <FadeIn delay={0.4}>
+                <div className="mt-8 overflow-hidden rounded-2xl border border-bone/10 aspect-[4/3]">
+                  <img
+                    src={imgUrl('images/services/home-office.jpg')}
+                    alt="Digital Presence"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+                  />
+                </div>
+              </FadeIn>
             </div>
             <div>
               <StaggerGroup className="grid gap-3 sm:grid-cols-2">
@@ -123,6 +133,15 @@ export default function Services() {
                   Our goal is to transform your social media presence into a powerful extension of your brand, so that every post, comment, and interaction leaves a lasting impression.
                 </p>
               </FadeIn>
+              <FadeIn delay={0.3}>
+                <div className="mt-8 overflow-hidden rounded-2xl border border-bone/10 aspect-[4/3]">
+                  <img
+                    src={imgUrl('images/services/travel-apps.jpg')}
+                    alt="Social Media Engagement"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+                  />
+                </div>
+              </FadeIn>
             </div>
           </div>
         </div>
@@ -143,6 +162,15 @@ export default function Services() {
                 <p className="mt-6 text-bone/70 leading-relaxed">
                   We don't just produce visuals; we craft stories that capture the heart of your business and build a connection with your audience.
                 </p>
+              </FadeIn>
+              <FadeIn delay={0.3}>
+                <div className="mt-8 overflow-hidden rounded-2xl border border-bone/10 aspect-[4/3]">
+                  <img
+                    src={imgUrl('images/services/camera.jpg')}
+                    alt="Content Creation"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+                  />
+                </div>
               </FadeIn>
             </div>
             <div>

@@ -103,27 +103,30 @@ const projects = [
 const serviceCards = [
   {
     title: 'Website',
+    icon: 'digital-engagement.png',
     sub: 'Distinctive, trust-first websites',
     body: 'Memorable identities — never cookie-cutter. Built to inspire trust and convert at first glance.',
   },
   {
     title: 'Social Media',
+    icon: 'social-media.png',
     sub: 'Channels that feel like your brand',
     body: 'Cleanup, ongoing management, SEO-friendly reels, and posts that leave a lasting impression.',
   },
   {
     title: 'Content Creation',
+    icon: 'content-creation.png',
     sub: 'Stories that capture the heart of your business',
     body: 'Photography, video, drone, and 360° tours — branded, edited, and ready to publish.',
   },
 ]
 
 const team = [
-  { name: 'Smita Vyas', role: 'Founder, Director & CEO', initials: 'SV', tone: 'gold' },
-  { name: 'Sagar Vyas', role: 'Co-Founder · Head of Creative Space & Solution Design', initials: 'SV', tone: 'cyan' },
-  { name: 'Aashutosh', role: 'Head of Media Operations', initials: 'A', tone: 'cyan' },
-  { name: 'Varun', role: 'Head of Technical Operations', initials: 'V', tone: 'gold' },
-  { name: 'Abhimanyu', role: 'Lead Designer & Editor', initials: 'A', tone: 'cyan' },
+  { name: 'Smita Vyas', role: 'Founder, Director & CEO', photo: 'smita-vyas.png' },
+  { name: 'Sagar Vyas', role: 'Co-Founder · Head of Creative Space & Solution Design', photo: 'sagar-vyas.png' },
+  { name: 'Aashutosh', role: 'Head of Media Operations', photo: 'aashutosh.png' },
+  { name: 'Varun', role: 'Head of Technical Operations', photo: 'varun.png' },
+  { name: 'Abhimanyu', role: 'Lead Designer & Editor', photo: 'abhimanyu.png' },
 ]
 
 const clients = [
@@ -161,19 +164,12 @@ export default function Home() {
                 <span className="eyebrow">Connections X Media Inc. · Langley · BC</span>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h1 className="display-h1 mt-6 text-bone">
-                  WE CONNECT
-                  <br />
-                  <span className="bg-gradient-to-r from-cyan-electric via-cyan-glow to-gold-soft bg-clip-text text-transparent">
-                    360
-                  </span>
-                  <span className="text-bone">.</span>
+                <h1 className="display-h1 mt-6 text-bone leading-tight" style={{ fontFamily: 'Monoton, cursive' }}>
+                  WE CONNECT<sup className="align-super" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.32em', lineHeight: 1 }}>
+                    <span className="bg-gradient-to-r from-cyan-electric via-cyan-glow to-gold-soft bg-clip-text text-transparent">360°</span>
+                    <span className="text-bone font-normal"> degree</span>
+                  </sup>
                 </h1>
-              </FadeIn>
-              <FadeIn delay={0.2}>
-                <p className="mt-6 font-display italic text-2xl text-bone/80 md:text-3xl">
-                  Because Connections Matter — Growing Social Presence Digitally.
-                </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -331,13 +327,20 @@ export default function Home() {
           </FadeIn>
 
           <StaggerGroup className="mt-12 grid gap-6 md:grid-cols-3">
-            {serviceCards.map(({ title, sub, body }, i) => (
+            {serviceCards.map(({ title, icon, sub, body }, i) => (
               <StaggerItem
                 key={title}
-                className="card-base hover:-translate-y-1 hover:border-gold-warm/40 hover:shadow-gold"
+                className="card-base hover:-translate-y-1 hover:border-gold-warm/40 hover:shadow-gold relative"
               >
-                <div className="font-display text-5xl font-bold text-bone/30">
-                  {String(i + 1).padStart(2, '0')}
+                <div className="flex items-start justify-between">
+                  <div className="font-display text-5xl font-bold text-bone/30">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <img
+                    src={imgUrl(`images/services/${icon}`)}
+                    alt={title}
+                    className="h-12 w-12 object-contain"
+                  />
                 </div>
                 <h3 className="display-h3 mt-4 text-bone">{title}</h3>
                 <p className="mt-1 text-xs uppercase tracking-widest2 text-gold-warm">{sub}</p>
@@ -373,17 +376,14 @@ export default function Home() {
           </div>
 
           <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {team.map(({ name, role, initials, tone }) => (
+            {team.map(({ name, role, photo }) => (
               <StaggerItem key={name}>
-                <div
-                  className={`relative aspect-square rounded-2xl bg-gradient-to-br ${
-                    tone === 'cyan'
-                      ? 'from-cyan-electric/20 via-cyan-electric/5 to-ink-900'
-                      : 'from-gold-warm/20 via-gold-warm/5 to-ink-900'
-                  } flex items-center justify-center border border-bone/10 overflow-hidden`}
-                >
-                  <span className="font-display text-5xl font-bold text-bone/70">{initials}</span>
-                  <div className="absolute bottom-3 right-3 h-2 w-2 rounded-full bg-cyan-electric" />
+                <div className="aspect-square rounded-2xl border border-bone/10 overflow-hidden">
+                  <img
+                    src={imgUrl(`images/team/${photo}`)}
+                    alt={name}
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+                  />
                 </div>
                 <div className="mt-3">
                   <div className="font-display text-xl text-bone">{name}</div>
@@ -396,8 +396,12 @@ export default function Home() {
       </section>
 
       {/* 6. Clients */}
-      <section id="clients" className="py-24 lg:py-32">
-        <div className="container-edge">
+      <section id="clients" className="py-24 lg:py-32 relative">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-15 pointer-events-none"
+          style={{ backgroundImage: `url(${imgUrl('images/clients/client-bg.png')})` }}
+        />
+        <div className="container-edge relative">
           <FadeIn>
             <span className="eyebrow">Clients</span>
           </FadeIn>

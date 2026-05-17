@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { FadeIn, StaggerGroup, StaggerItem, PageWrap } from '../components/Reveal'
+import { imgUrl } from '../utils/imgUrl'
 
 const identityCards = [
   { value: 'Women-Led', body: 'A Canadian initiative founded and led by a woman entrepreneur.' },
@@ -81,6 +82,15 @@ export default function About() {
                   <span className="block italic text-cyan-electric">Why We Started Connections.</span>
                 </h2>
               </FadeIn>
+              <FadeIn delay={0.2}>
+                <div className="mt-8 overflow-hidden rounded-2xl border border-bone/10">
+                  <img
+                    src={imgUrl('images/about/phone-desk.jpg')}
+                    alt="Smartphone on a desk"
+                    className="w-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+                  />
+                </div>
+              </FadeIn>
             </div>
 
             <div className="lg:col-span-8">
@@ -108,6 +118,15 @@ export default function About() {
             <h2 className="display-h2 mt-4 max-w-2xl text-bone">
               A five-step path from idea to ongoing growth.
             </h2>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="mt-10 overflow-hidden rounded-2xl border border-bone/10 aspect-[16/6]">
+              <img
+                src={imgUrl('images/about/team-working.jpg')}
+                alt="Team collaborating on a project"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
+              />
+            </div>
           </FadeIn>
 
           <div className="relative mt-16">
