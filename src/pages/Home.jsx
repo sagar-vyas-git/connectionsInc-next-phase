@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import MapleLogo from '../components/MapleLogo'
 import { FadeIn, StaggerGroup, StaggerItem, PageWrap } from '../components/Reveal'
+import { imgUrl } from '../utils/imgUrl'
 
 function HeroOrbit() {
   const { scrollY } = useScroll()
@@ -297,7 +298,7 @@ export default function Home() {
                 >
                   <div className={`relative aspect-[4/5] bg-gradient-to-br ${swatch} flex items-end p-6`}>
                     <img
-                      src={`/images/projects/${slug}-a.jpg`}
+                      src={imgUrl(`images/projects/${slug}-a.jpg`)}
                       alt={client}
                       className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
                     />
@@ -414,7 +415,7 @@ export default function Home() {
                   className="flex h-40 flex-col items-center justify-center bg-ink-900/80 p-6 text-center transition hover:bg-ink-800"
                 >
                   <img
-                    src={`/images/clients/${logo}`}
+                    src={imgUrl(`images/clients/${logo}`)}
                     alt={name}
                     className="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition-[filter] duration-500"
                   />

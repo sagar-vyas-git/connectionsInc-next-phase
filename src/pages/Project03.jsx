@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { FadeIn, StaggerGroup, StaggerItem, PageWrap } from '../components/Reveal'
+import { imgUrl } from '../utils/imgUrl'
 
 const highlights = [
   { label: 'Client', value: 'South Asian Connect' },
@@ -29,7 +30,7 @@ export default function Project03() {
         <FadeIn>
           <div className="overflow-hidden rounded-2xl aspect-[16/7] bg-ink-900 border border-bone/10">
             <img
-              src="/images/projects/project-03-b.jpg"
+              src={imgUrl('images/projects/project-03-b.jpg')}
               alt="South Asian Connect project"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
             />
