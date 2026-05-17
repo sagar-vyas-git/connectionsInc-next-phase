@@ -410,8 +410,8 @@ export default function Home() {
       {/* 6. Clients */}
       <section id="clients" className="py-24 lg:py-32 relative">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
-          style={{ backgroundImage: `url(${imgUrl('images/clients/client-bg.png')})` }}
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: `url(${imgUrl('images/clients/client-bg.png')})`, filter: 'brightness(1.3)' }}
         />
         <div className="container-edge relative">
           <FadeIn>
