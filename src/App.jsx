@@ -31,7 +31,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <Routes location={location} key={location.pathname}>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />

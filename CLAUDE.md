@@ -47,7 +47,7 @@ npm run preview      # preview the production build
 
 **Custom Tailwind tokens:** `ink-950/900/800/700/600`, `cyan-electric`, `cyan-glow`, `gold-warm/deep/soft`, `bone`, `font-display`, `tracking-widest2`, `shadow-glow`, `shadow-gold`, `bg-grid-soft`, `bg-grid-32`.
 
-**Sticky navbar:** `h-20`, `z-50`; becomes `bg-ink-950/85 backdrop-blur-lg` after 12px scroll. `RealtySubnav` is sticky at `top-20` — keep in sync with navbar height if it ever changes.
+**Sticky navbar:** `h-28`, `z-50`; becomes `bg-ink-950/85 backdrop-blur-lg` after 12px scroll. `RealtySubnav` is sticky at `top-28` — keep in sync with navbar height if it ever changes.
 
 **Realty sub-pages:** All 6 sub-pages (`/realty/*`) render `<SubPageHero>` then `<RealtySubnav>`. The Realty overview (`/realty`) uses `<PageHero>` then `<RealtySubnav>`.
 

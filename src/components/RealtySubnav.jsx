@@ -12,7 +12,7 @@ const links = [
 
 export default function RealtySubnav() {
   return (
-    <div className="sticky top-20 z-30 border-y border-bone/10 bg-ink-950/80 backdrop-blur-lg">
+    <div className="sticky top-28 z-30 border-y border-bone/10 bg-ink-950/80 backdrop-blur-lg">
       <div className="container-edge">
         <div className="flex gap-1 overflow-x-auto py-3">
           {links.map(({ to, label, end }) => (

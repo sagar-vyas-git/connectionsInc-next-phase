@@ -8,7 +8,7 @@ export default function Layout() {
       <div className="pointer-events-none fixed inset-0 -z-10 opacity-[0.07] bg-grid-soft bg-grid-32" />
       <div className="pointer-events-none fixed inset-0 -z-10 noise-overlay opacity-[0.06]" />
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-28">
         <Outlet />
       </main>
       <Footer />
