@@ -3,8 +3,8 @@ import { FadeIn } from './Reveal'
 export default function PageHero({ eyebrow, title, kicker, children }) {
   return (
     <section className="relative overflow-hidden">
-      <div className="gradient-radial-cyan absolute inset-0 -z-10" />
-      <div className="gradient-radial-gold absolute inset-0 -z-10" />
+      <div className="gradient-radial-cyan absolute inset-0 pointer-events-none" />
+      <div className="gradient-radial-gold absolute inset-0 pointer-events-none" />
       <div className="container-edge py-20 lg:py-28">
         <FadeIn>
           <span className="eyebrow">{eyebrow}</span>

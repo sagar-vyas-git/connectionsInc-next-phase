@@ -155,7 +155,7 @@ export default function Home() {
     <PageWrap>
       {/* 1. Hero */}
       <section id="top" className="relative overflow-hidden">
-        <div className="gradient-radial-cyan absolute inset-0 -z-10" />
+        <div className="gradient-radial-cyan absolute inset-0 pointer-events-none" />
         <HeroOrbit />
         <div className="container-edge py-24 lg:py-32">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">

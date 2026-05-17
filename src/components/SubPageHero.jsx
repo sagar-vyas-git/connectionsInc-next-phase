@@ -4,7 +4,7 @@ import { FadeIn } from './Reveal'
 export default function SubPageHero({ eyebrow, title, kicker }) {
   return (
     <section className="relative overflow-hidden">
-      <div className="gradient-radial-cyan absolute inset-0 -z-10 opacity-70" />
+      <div className="gradient-radial-cyan absolute inset-0 opacity-70 pointer-events-none" />
       <div className="container-edge py-16 lg:py-24">
         <FadeIn>
           <nav className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest2 text-bone/50">
