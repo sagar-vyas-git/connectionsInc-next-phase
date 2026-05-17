@@ -68,19 +68,12 @@ export default function Footer() {
                 { to: '/about', label: 'About Us' },
                 { to: '/services', label: 'Services' },
                 { to: '/realty', label: 'Boost Realty Listings' },
-                { href: '/#contact', label: 'Contact' },
-              ].map(({ to, href, label }) =>
-                to ? (
+                { to: '/#contact', label: 'Contact' },
+              ].map(({ to, label }) => (
                   <li key={label}>
                     <Link to={to} className="text-sm text-bone/60 hover:text-bone transition-colors">
                       {label}
                     </Link>
-                  </li>
-                ) : (
-                  <li key={label}>
-                    <a href={href} className="text-sm text-bone/60 hover:text-bone transition-colors">
-                      {label}
-                    </a>
                   </li>
                 )
               )}

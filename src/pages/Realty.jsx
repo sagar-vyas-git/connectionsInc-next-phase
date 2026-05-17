@@ -134,9 +134,9 @@ export default function Realty() {
               <div className="relative">
                 <span className="eyebrow">Need a custom bundle?</span>
                 <h2 className="display-h2 mt-4 text-bone">Talk to a real human at Connections.</h2>
-                <a href="/#contact" className="btn-primary mt-8 inline-flex">
+                <Link to="/#contact" className="btn-primary mt-8 inline-flex">
                   Start a Conversation →
-                </a>
+                </Link>
               </div>
             </div>
           </FadeIn>

@@ -67,12 +67,12 @@ export default function Navbar() {
               )}
             </NavLink>
           ))}
-          <a
-            href="/#contact"
+          <Link
+            to="/#contact"
             className="px-3 py-2 text-sm font-medium text-bone/80 hover:text-bone transition-colors"
           >
             Contact
-          </a>
+          </Link>
           <Link to="/services" className="btn-primary ml-3 hidden lg:inline-flex">
             Get Started
           </Link>
@@ -125,12 +125,12 @@ export default function Navbar() {
                   {label}
                 </NavLink>
               ))}
-              <a
-                href="/#contact"
+              <Link
+                to="/#contact"
                 className="py-2 text-sm font-medium text-bone/80 hover:text-bone transition-colors"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
           </motion.div>
         )}
