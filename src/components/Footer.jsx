@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import MapleLogo from './MapleLogo'
+import { imgUrl } from '../utils/imgUrl'
 
 function LinkedInIcon() {
   return (
@@ -32,11 +32,12 @@ export default function Footer() {
       <div className="container-edge relative py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-2">
-              <MapleLogo className="h-9 w-9" />
-              <span className="font-display text-xl font-bold tracking-widest2">
-                CONNECTIONS<span className="text-cyan-electric">×</span>
-              </span>
+            <div>
+              <img
+                src={imgUrl('images/logo/connection-maple-white-no-bg-crop.png')}
+                alt="Connections X Media Inc."
+                className="h-14 w-auto object-contain"
+              />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-bone/60">
               Because Connections Matter — growing your social presence digitally. A women-led Canadian digital studio rooted in British Columbia.

@@ -82,26 +82,27 @@ export default function About() {
                   <span className="block italic text-cyan-electric">Why We Started Connections.</span>
                 </h2>
               </FadeIn>
-              <FadeIn delay={0.2}>
-                <div className="mt-8 overflow-hidden rounded-2xl border border-bone/10">
-                  <img
-                    src={imgUrl('images/about/phone-desk.jpg')}
-                    alt="Smartphone on a desk"
-                    className="w-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500"
-                  />
-                </div>
-              </FadeIn>
             </div>
 
-            <div className="lg:col-span-8">
-              <StaggerGroup className="space-y-6">
-                {quotes.map((quote, i) => (
-                  <StaggerItem key={i} className="relative rounded-2xl border border-bone/10 bg-ink-900/60 p-8">
-                    <div className="absolute -left-3 top-7 hidden h-px w-6 bg-cyan-electric md:block" />
-                    <p className="text-bone/80 leading-relaxed">{quote}</p>
-                  </StaggerItem>
-                ))}
-              </StaggerGroup>
+            <div
+              className="lg:col-span-8 relative rounded-2xl overflow-hidden"
+              style={{
+                backgroundImage: `url(${imgUrl('images/about/phone-desk.jpg')})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-ink-950/75" />
+              <div className="relative p-6 lg:p-8">
+                <StaggerGroup className="space-y-6">
+                  {quotes.map((quote, i) => (
+                    <StaggerItem key={i} className="relative rounded-2xl border border-bone/10 bg-ink-900/50 p-8">
+                      <div className="absolute -left-3 top-7 hidden h-px w-6 bg-cyan-electric md:block" />
+                      <p className="text-bone/80 leading-relaxed">{quote}</p>
+                    </StaggerItem>
+                  ))}
+                </StaggerGroup>
+              </div>
             </div>
           </div>
         </div>

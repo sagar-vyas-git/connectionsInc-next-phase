@@ -164,11 +164,23 @@ export default function Home() {
                 <span className="eyebrow">Connections X Media Inc. · Langley · BC</span>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h1 className="display-h1 mt-6 text-bone leading-tight" style={{ fontFamily: 'Monoton, cursive' }}>
-                  WE CONNECT<sup className="align-super" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.32em', lineHeight: 1 }}>
-                    <span className="bg-gradient-to-r from-cyan-electric via-cyan-glow to-gold-soft bg-clip-text text-transparent">360°</span>
-                    <span className="text-bone font-normal"> degree</span>
-                  </sup>
+                <h1 className="display-h1 mt-6 text-bone leading-tight" style={{ fontFamily: 'Monoton, cursive', fontWeight: 100 }}>
+                  <span className="relative inline-block">
+                    WE CONNECT
+                    <span
+                      className="absolute"
+                      style={{
+                        top: '-0.25em',
+                        right: '-0.3em',
+                        fontSize: '0.3em',
+                        lineHeight: 1,
+                        fontFamily: 'DM Sans, sans-serif',
+                        fontWeight: 400,
+                      }}
+                    >
+                      <span className="bg-gradient-to-r from-cyan-electric via-cyan-glow to-gold-soft bg-clip-text text-transparent">360°</span>
+                    </span>
+                  </span>
                 </h1>
               </FadeIn>
               <FadeIn delay={0.3}>
