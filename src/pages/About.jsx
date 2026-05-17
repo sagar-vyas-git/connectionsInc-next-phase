@@ -69,8 +69,16 @@ export default function About() {
       </section>
 
       {/* Philosophy */}
-      <section className="py-20 lg:py-32">
-        <div className="container-edge">
+      <section
+        className="py-20 lg:py-32 relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${imgUrl('images/about/phone-desk.jpg')})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-ink-950/80" />
+        <div className="container-edge relative">
           <div className="grid gap-16 lg:grid-cols-12">
             <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <FadeIn>
@@ -84,25 +92,15 @@ export default function About() {
               </FadeIn>
             </div>
 
-            <div
-              className="lg:col-span-8 relative rounded-2xl overflow-hidden"
-              style={{
-                backgroundImage: `url(${imgUrl('images/about/phone-desk.jpg')})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <div className="absolute inset-0 bg-ink-950/75" />
-              <div className="relative p-6 lg:p-8">
-                <StaggerGroup className="space-y-6">
-                  {quotes.map((quote, i) => (
-                    <StaggerItem key={i} className="relative rounded-2xl border border-bone/10 bg-ink-900/50 p-8">
-                      <div className="absolute -left-3 top-7 hidden h-px w-6 bg-cyan-electric md:block" />
-                      <p className="text-bone/80 leading-relaxed">{quote}</p>
-                    </StaggerItem>
-                  ))}
-                </StaggerGroup>
-              </div>
+            <div className="lg:col-span-8">
+              <StaggerGroup className="space-y-6">
+                {quotes.map((quote, i) => (
+                  <StaggerItem key={i} className="relative rounded-2xl border border-bone/10 bg-ink-900/50 p-8">
+                    <div className="absolute -left-3 top-7 hidden h-px w-6 bg-cyan-electric md:block" />
+                    <p className="text-bone/80 leading-relaxed">{quote}</p>
+                  </StaggerItem>
+                ))}
+              </StaggerGroup>
             </div>
           </div>
         </div>
@@ -130,31 +128,15 @@ export default function About() {
             </div>
           </FadeIn>
 
-          <div className="relative mt-16">
-            <div className="absolute left-6 top-0 hidden h-full w-px bg-bone/10 md:left-1/2 md:block" />
-
-            <div className="space-y-8">
-              {timelineSteps.map(({ n, title, body }, i) => (
-                <div key={n} className="relative grid gap-6 md:grid-cols-2">
-                  <div className="absolute left-1/2 top-8 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-cyan-electric bg-ink-950 md:block z-10" />
-                  <div
-                    className={`pl-12 md:pl-0 ${
-                      i % 2 === 0 ? 'md:pr-12' : 'md:order-2 md:pl-12'
-                    }`}
-                  >
-                    <FadeIn delay={i * 0.05}>
-                      <div className="card-base">
-                        <span className="font-display text-6xl text-cyan-electric">{n}</span>
-                        <h3 className="display-h3 mt-4 text-bone">{title}</h3>
-                        <p className="mt-3 text-bone/70 leading-relaxed">{body}</p>
-                      </div>
-                    </FadeIn>
-                  </div>
-                  <div className={i % 2 === 1 ? 'hidden md:block md:order-1' : 'hidden md:block'} />
-                </div>
-              ))}
-            </div>
-          </div>
+          <StaggerGroup className="mt-12 grid gap-6 md:grid-cols-2">
+            {timelineSteps.map(({ n, title, body }) => (
+              <StaggerItem key={n} className="card-base">
+                <span className="font-display text-6xl text-cyan-electric">{n}</span>
+                <h3 className="display-h3 mt-4 text-bone">{title}</h3>
+                <p className="mt-3 text-bone/70 leading-relaxed">{body}</p>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
 
           <FadeIn className="mt-16">
             <div className="rounded-3xl border border-bone/10 bg-ink-900/60 p-8 md:p-12 text-center">

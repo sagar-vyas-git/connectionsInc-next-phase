@@ -172,9 +172,9 @@ export default function Home() {
                       style={{
                         top: '-0.25em',
                         right: '-0.3em',
-                        fontSize: '0.3em',
+                        fontSize: '2rem',
                         lineHeight: 1,
-                        fontFamily: 'DM Sans, sans-serif',
+                        fontFamily: 'Playfair Display, Georgia, serif',
                         fontWeight: 400,
                       }}
                     >
@@ -351,7 +351,7 @@ export default function Home() {
                   <img
                     src={imgUrl(`images/services/${icon}`)}
                     alt={title}
-                    className="h-12 w-12 object-contain"
+                    className="h-20 w-20 object-contain"
                   />
                 </div>
                 <h3 className="display-h3 mt-4 text-bone">{title}</h3>
@@ -410,7 +410,7 @@ export default function Home() {
       {/* 6. Clients */}
       <section id="clients" className="py-24 lg:py-32 relative">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-15 pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
           style={{ backgroundImage: `url(${imgUrl('images/clients/client-bg.png')})` }}
         />
         <div className="container-edge relative">

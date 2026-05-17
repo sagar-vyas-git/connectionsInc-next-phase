@@ -36,7 +36,8 @@ export default function Navbar() {
           <img
             src={imgUrl('images/logo/connection-maple-white-no-bg-crop.png')}
             alt="Connections X Media Inc."
-            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            style={{ height: '7rem', paddingTop: '1rem' }}
           />
         </Link>
 
